@@ -30,6 +30,12 @@ app.use((req, res, next) => {
   next();
 });
 
+// Require cors
+const cors = require("cors");
+
+// Allow requests from all origins (for development only)
+app.use(cors());
+
 // Routes
 // workoutRoutes is triggered when we make a request to /api/workouts
 app.use("/api/workouts", workoutRoutes);
